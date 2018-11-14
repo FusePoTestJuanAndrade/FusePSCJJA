@@ -5,6 +5,7 @@
  */
 
 package fuse.appweb.shop.restcontroller;
+import fuse.appweb.shop.model.Product;
 import fuse.appweb.shop.services.OrderServices;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -122,15 +123,15 @@ public class ShopController {
             }  
     }
     
-    /*
-    @RequestMapping(method = RequestMethod.POST)	
-    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Order newOrder){
+    
+    @RequestMapping(method = RequestMethod.POST, value ="/products")	
+    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Product product){
             try {
-                    restaurantorderservices.addNewOrderToTable(newOrder);
+                    services.addProduct(product);
                     return new ResponseEntity<>(HttpStatus.CREATED);
             } catch (Exception ex) {
-                    Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
-                    return new ResponseEntity<>("Error al intentar subir la orden",HttpStatus.FORBIDDEN);            
+         
+                    return new ResponseEntity<>(ex,HttpStatus.FORBIDDEN);            
             }        
 
     }
@@ -138,7 +139,7 @@ public class ShopController {
     //Ejemplo de como usar Put con Json : Dentro van los nuevos productos que se quieran agregar{"orderAmountsMap":{"PIZZA":5},"tableNumber":1}
     //http://localhost:8080/orders Este es el path para modificar determinados datos sea la mesa que sea
     // Ejemplo para modificar orden: curl -i -X PUT -HContent-Type:application/json -HAccept:application/json http://localhost:8080/orders -d '{"orderAmountsMap":{"PIZZA":3,"HOTDOG":1,"COKE":4,"HAMBURGER":4},"tableNumber":1}'
-
+    /*
     @RequestMapping(method = RequestMethod.PUT)	
     public ResponseEntity<?> manejadorPutxOrder(@RequestBody  Order newOrder){
             try {   
