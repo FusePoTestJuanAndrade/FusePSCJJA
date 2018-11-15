@@ -37,14 +37,52 @@ var RestControllerModule = (function () {
 			callback.onFailed(error);
 		});
 	};
+	//------------------Metodos Post------	
+  var createUser = function (nombre,correo,clave,tipo, callback) {
+    axios.post('/shopapi/users/'+nombre+'/'+correo+'/'+clave+'/'+tipo+'/')
+     .then(function(){
+		callback.onSuccess();
+	 })
+	 .catch(function(error){		 
+		callback.onFailed(error);
+	 });
+  };
+  var createProduct = function (product, callback) {
+    axios.post('/shopapi/products/',product)
+     .then(function(){
+		callback.onSuccess();
+	 })
+	 .catch(function(error){		 
+		callback.onFailed(error);
+	 });
+  };
+//------------------Metodos Put------	
+  var logIn = function (email,contr,callback) {
+    axios.put('/shopapi/users/login/'+mail+'/'+contr+'/')
+     .then(function(){
+		callback.onSuccess();
+	 })
+	 .catch(function(error){		 
+		callback.onFailed(error);
+	 });
+  };
+  var logOut = function (callback) {
+    axios.put('/shopapi/users/logout/')
+     .then(function(){
+		callback.onSuccess();
+	 })
+	 .catch(function(error){		 
+		callback.onFailed(error);
+	 });
+  };
 	
-
-
-  
-
   return {
 	getActiveUser: getActiveUser,
     getProducts: getProducts,
+	createUser: createUser,
+	createProduct: createProduct,
+	logIn: logIn,
+	logOut: logOut,
 	getProduct: getProduct,
     getSearchProducts: getSearchProducts
 

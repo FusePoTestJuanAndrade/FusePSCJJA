@@ -102,10 +102,66 @@ var OrdersControllerModule = (function () {
   };  
 	  
 
+//------------------Metodos Post---------------
+var createUser = function (nombre,correo,clave,tipo) {
+    var callback = {
+
+        onSuccess: function(){
+
+            },
+        onFailed: function(exception){
+        alert(exception);
+        }
+    }
+    RestControllerModule.createUser(nombre,correo,clave,tipo, callback);
+  };
+var createProduct = function (name,price,type,description,quantity,url) {
+	alert("Usuario creado exitosamente");
+	var product={"name":name,"price":price,"type":type,"description":description,"quantity":quantity,"url":url};
+    var callback = {
+        onSuccess: function(){
+			alert("Usuario creado exitosamente");
+            },
+        onFailed: function(exception){
+        alert(exception);
+        }
+    }
+    RestControllerModule.createProduct(product, callback);
+  };
+//------------------Metodos Put---------------
+	
+var logIn = function (mail, contr) {
+    var callback = {
+        onSuccess: function(){
+
+            },
+        onFailed: function(exception){
+		alert(exception);
+        alert("Hubo un problema con las credenciales");
+        }
+    }
+    RestControllerModule.logIn(mail,contr, callback);
+  };
+var logOut = function (mail, contr) {
+    var callback = {
+        onSuccess: function(){
+
+            },
+        onFailed: function(exception){
+		alert(exception);
+        alert("Hubo un problema cerrando sesión");
+        }
+    }
+    RestControllerModule.logOut(callback);
+  };
 
  
 
   return {
+	createUser: createUser,
+	createProduct: createProduct,
+	logIn: logIn,
+	logOut: logOut,
 	getActiveUser: getActiveUser,
 	setSearch:setSearch,
     getProducts: getProducts,

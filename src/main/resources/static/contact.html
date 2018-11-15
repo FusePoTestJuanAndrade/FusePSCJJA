@@ -60,13 +60,15 @@
 						</li>
 					</ul>
 				</div>
+				
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+					<input id="searchText" type="text" placeholder="Search.." onchange="OrdersControllerModule.setSearch(searchText.value)">
 					<ul>
 						<li class="search">
 							<div class="input-group">
-						      <input type="text" placeholder="Search..">
-						      <span class="input-group-btn">
-						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+						      
+						      <span class="input-group-btn" >
+						        <button class="btn btn-primary" type="button" ><a href="search.html" ><i class="icon-search"></a></i></button>
 						      </span>
 						    </div>
 						</li>
@@ -100,7 +102,7 @@
 
 				<div class="col-md-6 animate-box">
 					<h3>Create an account</h3>
-					<form action="#">
+					<form>
 						<div class="row form-group">
 							<div class="col-md-6">
 								<!-- <label for="fname">First Name</label> -->
@@ -122,15 +124,16 @@
 						<div class="row form-group">
 							<div class="col-md-12">
 								<!-- <label for="subject">Subject</label> -->
-								<input type="text" id="subject" class="form-control" placeholder="Url Login Image">
+								<input type="password" id="contr" class="form-control" placeholder="Contraseña">
 							</div>
 						</div>
 
 						<div class="form-group">
-							<input type="submit" value="Create Account" class="btn btn-primary">
+							<input type="submit" value="Create Account" class="btn btn-primary" >
 						</div>
 
-					</form>		
+					</form>	
+					
 				</div>
 			</div>
 			

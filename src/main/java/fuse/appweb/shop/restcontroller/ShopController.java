@@ -6,6 +6,7 @@
 
 package fuse.appweb.shop.restcontroller;
 import fuse.appweb.shop.model.Product;
+import fuse.appweb.shop.model.User;
 import fuse.appweb.shop.services.OrderServices;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -123,8 +124,21 @@ public class ShopController {
     }
     
     
-    @RequestMapping(method = RequestMethod.POST, value ="/products")	
-    public ResponseEntity<?> manejadorPostRecursoXX(@RequestBody Product product){
+
+    //POST -----------------------------------------------------------------------------
+    @RequestMapping(method = RequestMethod.POST, value ="/users/name}/{mail}/{contr}/{tipo}")	
+    public ResponseEntity<?> PostUser(@PathVariable String name,@PathVariable String mail, @PathVariable String contr, @PathVariable String tipo){
+            try {
+                    
+                    services.addUser(new User(name,mail,contr,tipo));
+                    return new ResponseEntity<>(HttpStatus.CREATED);
+            } catch (Exception ex) {
+         
+                    return new ResponseEntity<>(ex,HttpStatus.FORBIDDEN);            
+            }        
+    }
+        @RequestMapping(method = RequestMethod.POST, value ="/products")	
+    public ResponseEntity<?> PostProduct(@RequestBody Product product){
             try {
                     services.addProduct(product);
                     return new ResponseEntity<>(HttpStatus.CREATED);
@@ -134,6 +148,28 @@ public class ShopController {
             }        
 
     }
+    //PUT -----------------------------------------------------------------------------
+        @RequestMapping(method = RequestMethod.PUT, value ="/users/login/{mail}/{contr}")	
+    public ResponseEntity<?> PutLogIn(@PathVariable String mail, @PathVariable String contr){
+            try {
+                    services.logIn(mail, contr);
+                    return new ResponseEntity<>(HttpStatus.ACCEPTED);
+            } catch (Exception ex) {
+                    return new ResponseEntity<>(ex,HttpStatus.FORBIDDEN);            
+            }        
+    }
+    @RequestMapping(method = RequestMethod.PUT, value ="/users/logout")	
+    public ResponseEntity<?> PutLogOut(){
+            try {
+                    services.logOut();
+                    return new ResponseEntity<>(HttpStatus.ACCEPTED);
+            } catch (Exception ex) {
+         
+                    return new ResponseEntity<>(ex,HttpStatus.FORBIDDEN);            
+            }        
+    }
+    
+    
     //Se ingresa una orden con el identificador de la mesa a la que se le quieren agregar cosas y los productos
     //Ejemplo de como usar Put con Json : Dentro van los nuevos productos que se quieran agregar{"orderAmountsMap":{"PIZZA":5},"tableNumber":1}
     //http://localhost:8080/orders Este es el path para modificar determinados datos sea la mesa que sea
