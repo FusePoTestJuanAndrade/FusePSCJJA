@@ -1,9 +1,8 @@
 var OrdersControllerModule = (function () {
   
   var loadProduct=function (product,elemento) {
-		alert(product.name);
-		alert(elemento);
-		nombre='<div class="col-md-4 text-center animate-box"><div class="product"><div class="product-grid" style="background-image:url(';
+
+		nombre='<div class="col-md-4 text-center animate-box fadeInUp animated-fast"><div class="product"><div class="product-grid" style="background-image:url(';
 		nombre+=product.url+');">';
 		nombre+='<div class="inner"><p><a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a><a href="single.html" class="icon"><i class="icon-eye"></i></a></p></div></div><div class="desc"><h3><a href="single.html">';
 		nombre+=product.name+'</a></h3><span class="price">$';
@@ -28,6 +27,7 @@ var OrdersControllerModule = (function () {
 				
 			loadProduct(ordersList[i],"magic"+id.toString());
 			}
+			
             },
         onFailed: function(exception){
 		alert(exception);
