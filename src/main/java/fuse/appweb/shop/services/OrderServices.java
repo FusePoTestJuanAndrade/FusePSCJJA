@@ -19,7 +19,7 @@ public interface OrderServices {
     Map<String, User> getAllUsers();
     Set<String> getAvailableProductNames();
     Product getProductByName(String product) throws OrderServicesException;
-    int calculateBill(String email) throws OrderServicesException;
+    float calculateBill(String email) throws OrderServicesException;
     void cleanUserOrder(String email) throws OrderServicesException;
     Map<String, Product> getAllProducts();
     Map<String, Product> getProductsByNameOrType(String busqueda);

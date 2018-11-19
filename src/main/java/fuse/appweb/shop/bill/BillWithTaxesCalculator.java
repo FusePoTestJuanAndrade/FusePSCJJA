@@ -15,7 +15,7 @@ public class BillWithTaxesCalculator implements BillCalculator {
     TaxesCalculator taxescalc;
 
     @Override
-    public int calculateBill(Order o, Map<String, Product> productsMap) {
+    public float calculateBill(Order o, Map<String, Product> productsMap) {
         int total = 0;
         for (String p : o.getProducts()) {
             Product rp=productsMap.get(p);

@@ -43,7 +43,7 @@
 
 	</head>
 	<body>
-	<!--body onload="OrdersControllerModule.getProducts()"-->	
+	<body onload="OrdersControllerModule.getProducts()">	
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
@@ -64,13 +64,15 @@
 						</li>
 					</ul>
 				</div>
+				
 				<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+					<input id="searchText" type="text" placeholder="Search.." onchange="OrdersControllerModule.setSearch(searchText.value)">
 					<ul>
 						<li class="search">
 							<div class="input-group">
-						      <input type="text" placeholder="Search..">
-						      <span class="input-group-btn">
-						        <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+						      
+						      <span class="input-group-btn" >
+						        <button class="btn btn-primary" type="button" ><a href="search.html" ><i class="icon-search"></a></i></button>
 						      </span>
 						    </div>
 						</li>
@@ -153,107 +155,8 @@
 					<h2>Products</h2>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-1.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
-							<span class="price">$350</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-2.jpg);">
-							<span class="sale">Sale</span>
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Pavilion Speaker</a></h3>
-							<span class="price">$600</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-3.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Ligomancer</a></h3>
-							<span class="price">$780</span>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-4.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Alato Cabinet</a></h3>
-							<span class="price">$800</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-5.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Earing Wireless</a></h3>
-							<span class="price">$100</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(images/product-6.jpg);">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">Sculptural Coffee Table</a></h3>
-							<span class="price">$960</span>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			
 		</div>
 	</div>
 

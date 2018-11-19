@@ -56,7 +56,6 @@ public class ShopController {
     public ResponseEntity<?> GetProducts(){
 
             try {
-                    //obtener datos que se enviarán a través del API
                     return new ResponseEntity<>(services.getAllProducts(),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
@@ -68,7 +67,7 @@ public class ShopController {
 
 
             try {
-                    //obtener datos que se enviarán a través del API
+
                     return new ResponseEntity<>(services.getOrderedProducts(),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
@@ -79,7 +78,7 @@ public class ShopController {
     public ResponseEntity<?> GetSearchProducts(@PathVariable String search){
 
             try {
-                    //obtener datos que se enviarán a través del API
+
                     return new ResponseEntity<>(services.getProductsByNameOrType(search),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
@@ -91,7 +90,7 @@ public class ShopController {
     public ResponseEntity<?> GetProduct(@PathVariable String product){
 
             try {
-                    //obtener datos que se enviarán a través del API
+
                     return new ResponseEntity<>(services.getProductByName(product),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
@@ -104,7 +103,7 @@ public class ShopController {
 
 
             try {
-                    //obtener datos que se enviarán a través del API
+
                     return new ResponseEntity<>(services.getLoggedUser(),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
@@ -115,8 +114,8 @@ public class ShopController {
         @RequestMapping(method = RequestMethod.GET , value = "/factura/{mail}")
     public ResponseEntity<?> GetFact(@PathVariable String mail){
             try {
-                    //obtener datos que se enviarán a través del API
-                    return new ResponseEntity<>(services.calculateBill(mail),HttpStatus.ACCEPTED);
+
+                    return new ResponseEntity<>( Math.round(services.calculateBill(mail)),HttpStatus.ACCEPTED);
             } catch (Exception ex) {
 
                     return new ResponseEntity<>("Error 404"+ex,HttpStatus.NOT_FOUND);

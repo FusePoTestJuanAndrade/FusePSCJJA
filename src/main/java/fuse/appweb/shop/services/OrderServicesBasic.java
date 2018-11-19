@@ -46,14 +46,15 @@ public class OrderServicesBasic implements OrderServices {
         User usradm= new User("Juan José Andrade Pardo","juan.andrade96@hotmail.com","asduyasdku=asd","int");
         Order o = new Order("juan.andrade96@hotmail.com");
         usradm.setOrder(o);
-        o.addProduct("Omega Men's Seamaster 300M", 1);
+        o.addProduct("Omega Men's Seamaster 300M Chronometer", 1);
         o.addProduct("Beats By Dre Solo 2 Luxe Edition", 2);
         o.addProduct("Gibson Les Paul Custom Electric Guitar", 3);
         
         users.put("juan.andrade96@hotmail.com", usradm);
         User usradm2= new User("Juan José Andrade Pardo","juan.andrade95@hotmail.com","","ext");
         Order o2 = new Order("juan.andrade95@hotmail.com");
-        o2.addProduct("Omega Men's Seamaster 300M", 1);
+        usradm2.setOrder(o2);
+        o2.addProduct("Omega Men's Seamaster 300M Chronometer", 1);
         o2.addProduct("Beats By Dre Solo 2 Luxe Edition", 2);
         users.put("juan.andrade95@hotmail.com", usradm2);
     }
@@ -81,7 +82,7 @@ public class OrderServicesBasic implements OrderServices {
 
 
     @Override
-    public int calculateBill(String email) throws OrderServicesException {
+    public float calculateBill(String email) throws OrderServicesException {
         if (!users.containsKey(email)) {
             throw new OrderServicesException("El usuario no está creado");
         } else {

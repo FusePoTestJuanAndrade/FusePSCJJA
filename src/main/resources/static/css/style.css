@@ -123,24 +123,25 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: -5px 0 0 0;
   
 }
-.fh5co-nav .menu-2 li input[type=text] {
-  
-  padding: 6px 10px;
+.fh5co-nav .menu-2 input{
+	
+	padding: 6px 10px;
   width: 40%;
   border: none;
   float: right;
   font-size: 16px;
-  margin-top: 4px;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
   background:transparent;
+	
 }
-.fh5co-nav .menu-2 li input[type=text]:focus {
+.fh5co-nav .menu-2 input[type=text]:focus {
   width: 100%;
   outline: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 .fh5co-nav .menu-2 li button {
   margin-top: 4px;
   padding: 5px;
@@ -347,7 +348,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-hero .flexslider .slider-text > .slider-text-inner h2 {
   font-size: 24px;
   font-weight: 400;
-  color: #000;
+  color: #FFF;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -357,19 +358,23 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc {
-  background: rgba(255, 255, 255,.9);
+  background: rgba(70, 70, 70,.9);
   padding: 40px;
   border-radius: 20px;
   box-shadow: 0 5px 40px rgba(0, 0, 0,.5);
+  color: #fff;
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .desc .price {
   font-size: 14px;
   letter-spacing: 3px;
   display: block;
   margin-bottom: 20px;
+  color: #fff;
+
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .btn {
   font-size: 18px;
+  
 }
 #fh5co-hero .flexslider .slider-text > .slider-text-inner .fh5co-lead {
   font-size: 20px;
